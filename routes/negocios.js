@@ -24,6 +24,8 @@ router.get("/estadonv/:estadonv", NegociosController.getNegocioByEstadoNv);
 // GET NEGOCIOS - USUARIO
 router.get("/usuario/:usuario", NegociosController.getNegocioByUsuario);
 
+// GET NEGOCIOS - USUARIO
+router.get("/items/:negocio_id", NegociosController.getNegocioItems);
 
 // GET NEGOCIOS - INTERVALO DE MESES (YYYY-MM - YYYY-MM)
 router.get("/meses/:from/:to", NegociosController.getNegocioByMonth);

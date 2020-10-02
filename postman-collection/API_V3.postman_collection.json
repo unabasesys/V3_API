@@ -1,0 +1,172 @@
+{
+	"variables": [],
+	"info": {
+		"name": "API_V3",
+		"_postman_id": "65a48ec3-94fb-707f-fee7-a9920c4a04d1",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [{
+			"name": "CREAR TOKEN",
+			"request": {
+				"url": "https://v3api.herokuapp.com/v1/auth/token/create",
+				"method": "POST",
+				"header": [{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": ""
+				}],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"user\":{\n\t\"ip\": \"35.185.68.7\",\n\t\"port\": \"8180\",\n\t\"name\": \"BASE\",\n\t\"id\":\"1234\"\n}\n}"
+				},
+				"description": "Crear token de acceso con la data del cliente."
+			},
+			"response": []
+		},
+		{
+			"name": "Listar negocios (estadonv)",
+			"request": {
+				"url": "https://v3api.herokuapp.com/v1/negocios/estadonv/proceso",
+				"method": "GET",
+				"header": [{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjM1LjE4NS42OC43IiwicG9ydCI6IjgxODAiLCJuYW1lIjoiQkFTRSIsImlkIjoiMTIzNCIsImlhdCI6MTYwMTA3OTUwMCwiZXhwIjoxNjAxMjUyMzAwfQ.4PYuInq43N118trNfRlbpKpLdtdgrmKz_moU-wTyfKs",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"setDelivery\": \"5f5e919556674768ca611185\",\n    \"excluded_driver\": [],\n    \"provider\": {\n        \"_id\": \"1\",\n        \"PROVIDER_NAME\": \"Fiesta\",\n        \"PROVIDER_PHONE\": null,\n        \"PROVIDER_ADDRESS\" : \"Jr calle 123\",\n        \"lat\": -11.50172,\n        \"lng\": -77.217241\n    },\n    \"order\": {\n        \"_id\": \"5f5e899287829d5990115c03\",\n        \"lat\": -11.49619190367379,\n        \"lng\": -77.20919351281671,\n        \"PAY\": 49289\n    },\n    \"client\": {\n        \"_id\": \"5f5e897787829d5990115c01\",\n        \"lat\": -11.49619190367379,\n        \"lng\": -77.20919351281671,\n        \"CLIENT_ADDRESS\": \"abc\",\n        \"CLIENT_NAME\": \"Tommy\",\n        \"CLIENT_PHONE\": \"+51999091429\"\n    },\n    \"products\": [\n        {\n            \"PRODUCT_ID\": \"61\",\n            \"PRODUCT_NAME\": \"Dudley\",\n            \"PRODUCT_QUANTITY\": 2,\n            \"PRODUCT_DESCRIPTION\": \"Consequatur error quas quae nam repellat voluptates magni. Maiores asperiores iure a similique. Nisi omnis et tenetur autem. Voluptatem vitae dolorum est velit ad eos id.\",\n            \"PRODUCT_OBSERVATION\": \"null- null\"\n        }\n    ]\n}"
+				},
+				"description": "Listar negocios en proceso, etc..."
+			},
+			"response": []
+		},
+		{
+			"name": "INDEX",
+			"request": {
+				"url": "https://v3api.herokuapp.com/",
+				"method": "GET",
+				"header": [{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjM1LjE4NS42OC43IiwicG9ydCI6IjgxODAiLCJuYW1lIjoiQkFTRSIsImlkIjoiMTIzNCIsImlhdCI6MTYwMTA3NDUwMCwiZXhwIjoxNjAxMDgxNzAwfQ.xvl5qx5rm9pTGMLLRrKdQ4W0Gs61mPNR9Zk8KVaiAj8",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"setDelivery\": \"5f5e919556674768ca611185\",\n    \"excluded_driver\": [],\n    \"provider\": {\n        \"_id\": \"1\",\n        \"PROVIDER_NAME\": \"Fiesta\",\n        \"PROVIDER_PHONE\": null,\n        \"PROVIDER_ADDRESS\" : \"Jr calle 123\",\n        \"lat\": -11.50172,\n        \"lng\": -77.217241\n    },\n    \"order\": {\n        \"_id\": \"5f5e899287829d5990115c03\",\n        \"lat\": -11.49619190367379,\n        \"lng\": -77.20919351281671,\n        \"PAY\": 49289\n    },\n    \"client\": {\n        \"_id\": \"5f5e897787829d5990115c01\",\n        \"lat\": -11.49619190367379,\n        \"lng\": -77.20919351281671,\n        \"CLIENT_ADDRESS\": \"abc\",\n        \"CLIENT_NAME\": \"Tommy\",\n        \"CLIENT_PHONE\": \"+51999091429\"\n    },\n    \"products\": [\n        {\n            \"PRODUCT_ID\": \"61\",\n            \"PRODUCT_NAME\": \"Dudley\",\n            \"PRODUCT_QUANTITY\": 2,\n            \"PRODUCT_DESCRIPTION\": \"Consequatur error quas quae nam repellat voluptates magni. Maiores asperiores iure a similique. Nisi omnis et tenetur autem. Voluptatem vitae dolorum est velit ad eos id.\",\n            \"PRODUCT_OBSERVATION\": \"null- null\"\n        }\n    ]\n}"
+				},
+				"description": "Retorna info sobre el API."
+			},
+			"response": []
+		},
+		{
+			"name": "Listar negocios (estado)",
+			"request": {
+				"url": "https://v3api.herokuapp.com/v1/negocios/estado/negocio",
+				"method": "GET",
+				"header": [{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjM1LjE4NS42OC43IiwicG9ydCI6IjgxODAiLCJuYW1lIjoiQkFTRSIsImlkIjoiMTIzNCIsImlhdCI6MTYwMTA3NDUwMCwiZXhwIjoxNjAxMDgxNzAwfQ.xvl5qx5rm9pTGMLLRrKdQ4W0Gs61mPNR9Zk8KVaiAj8",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"setDelivery\": \"5f5e919556674768ca611185\",\n    \"excluded_driver\": [],\n    \"provider\": {\n        \"_id\": \"1\",\n        \"PROVIDER_NAME\": \"Fiesta\",\n        \"PROVIDER_PHONE\": null,\n        \"PROVIDER_ADDRESS\" : \"Jr calle 123\",\n        \"lat\": -11.50172,\n        \"lng\": -77.217241\n    },\n    \"order\": {\n        \"_id\": \"5f5e899287829d5990115c03\",\n        \"lat\": -11.49619190367379,\n        \"lng\": -77.20919351281671,\n        \"PAY\": 49289\n    },\n    \"client\": {\n        \"_id\": \"5f5e897787829d5990115c01\",\n        \"lat\": -11.49619190367379,\n        \"lng\": -77.20919351281671,\n        \"CLIENT_ADDRESS\": \"abc\",\n        \"CLIENT_NAME\": \"Tommy\",\n        \"CLIENT_PHONE\": \"+51999091429\"\n    },\n    \"products\": [\n        {\n            \"PRODUCT_ID\": \"61\",\n            \"PRODUCT_NAME\": \"Dudley\",\n            \"PRODUCT_QUANTITY\": 2,\n            \"PRODUCT_DESCRIPTION\": \"Consequatur error quas quae nam repellat voluptates magni. Maiores asperiores iure a similique. Nisi omnis et tenetur autem. Voluptatem vitae dolorum est velit ad eos id.\",\n            \"PRODUCT_OBSERVATION\": \"null- null\"\n        }\n    ]\n}"
+				},
+				"description": "Listar negocios por estado (negocio, cotizacion)..."
+			},
+			"response": []
+		},
+		{
+			"name": "Listar negocios (Area)",
+			"request": {
+				"url": "https://v3api.herokuapp.com/v1/negocios/area/35",
+				"method": "GET",
+				"header": [{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjM1LjE4NS42OC43IiwicG9ydCI6IjgxODAiLCJuYW1lIjoiQkFTRSIsImlkIjoiMTIzNCIsImlhdCI6MTYwMTA3NDUwMCwiZXhwIjoxNjAxMDgxNzAwfQ.xvl5qx5rm9pTGMLLRrKdQ4W0Gs61mPNR9Zk8KVaiAj8",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"setDelivery\": \"5f5e919556674768ca611185\",\n    \"excluded_driver\": [],\n    \"provider\": {\n        \"_id\": \"1\",\n        \"PROVIDER_NAME\": \"Fiesta\",\n        \"PROVIDER_PHONE\": null,\n        \"PROVIDER_ADDRESS\" : \"Jr calle 123\",\n        \"lat\": -11.50172,\n        \"lng\": -77.217241\n    },\n    \"order\": {\n        \"_id\": \"5f5e899287829d5990115c03\",\n        \"lat\": -11.49619190367379,\n        \"lng\": -77.20919351281671,\n        \"PAY\": 49289\n    },\n    \"client\": {\n        \"_id\": \"5f5e897787829d5990115c01\",\n        \"lat\": -11.49619190367379,\n        \"lng\": -77.20919351281671,\n        \"CLIENT_ADDRESS\": \"abc\",\n        \"CLIENT_NAME\": \"Tommy\",\n        \"CLIENT_PHONE\": \"+51999091429\"\n    },\n    \"products\": [\n        {\n            \"PRODUCT_ID\": \"61\",\n            \"PRODUCT_NAME\": \"Dudley\",\n            \"PRODUCT_QUANTITY\": 2,\n            \"PRODUCT_DESCRIPTION\": \"Consequatur error quas quae nam repellat voluptates magni. Maiores asperiores iure a similique. Nisi omnis et tenetur autem. Voluptatem vitae dolorum est velit ad eos id.\",\n            \"PRODUCT_OBSERVATION\": \"null- null\"\n        }\n    ]\n}"
+				},
+				"description": "Listar negocios por area."
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar negocio (folio)",
+			"request": {
+				"url": "https://v3api.herokuapp.com/v1/negocios/folio/34045",
+				"method": "GET",
+				"header": [{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjM1LjE4NS42OC43IiwicG9ydCI6IjgxODAiLCJuYW1lIjoiQkFTRSIsImlkIjoiMTIzNCIsImlhdCI6MTYwMTA3OTUwMCwiZXhwIjoxNjAxMjUyMzAwfQ.4PYuInq43N118trNfRlbpKpLdtdgrmKz_moU-wTyfKs",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"setDelivery\": \"5f5e919556674768ca611185\",\n    \"excluded_driver\": [],\n    \"provider\": {\n        \"_id\": \"1\",\n        \"PROVIDER_NAME\": \"Fiesta\",\n        \"PROVIDER_PHONE\": null,\n        \"PROVIDER_ADDRESS\" : \"Jr calle 123\",\n        \"lat\": -11.50172,\n        \"lng\": -77.217241\n    },\n    \"order\": {\n        \"_id\": \"5f5e899287829d5990115c03\",\n        \"lat\": -11.49619190367379,\n        \"lng\": -77.20919351281671,\n        \"PAY\": 49289\n    },\n    \"client\": {\n        \"_id\": \"5f5e897787829d5990115c01\",\n        \"lat\": -11.49619190367379,\n        \"lng\": -77.20919351281671,\n        \"CLIENT_ADDRESS\": \"abc\",\n        \"CLIENT_NAME\": \"Tommy\",\n        \"CLIENT_PHONE\": \"+51999091429\"\n    },\n    \"products\": [\n        {\n            \"PRODUCT_ID\": \"61\",\n            \"PRODUCT_NAME\": \"Dudley\",\n            \"PRODUCT_QUANTITY\": 2,\n            \"PRODUCT_DESCRIPTION\": \"Consequatur error quas quae nam repellat voluptates magni. Maiores asperiores iure a similique. Nisi omnis et tenetur autem. Voluptatem vitae dolorum est velit ad eos id.\",\n            \"PRODUCT_OBSERVATION\": \"null- null\"\n        }\n    ]\n}"
+				},
+				"description": "Buscar negocio por numero de folio."
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar negocio por id",
+			"request": {
+				"url": "https://v3api.herokuapp.com/v1/negocios/73410",
+				"method": "GET",
+				"header": [{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjM1LjE4NS42OC43IiwicG9ydCI6IjgxODAiLCJuYW1lIjoiQkFTRSIsImlkIjoiMTIzNCIsImlhdCI6MTYwMTA3OTUwMCwiZXhwIjoxNjAxMjUyMzAwfQ.4PYuInq43N118trNfRlbpKpLdtdgrmKz_moU-wTyfKs",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"setDelivery\": \"5f5e919556674768ca611185\",\n    \"excluded_driver\": [],\n    \"provider\": {\n        \"_id\": \"1\",\n        \"PROVIDER_NAME\": \"Fiesta\",\n        \"PROVIDER_PHONE\": null,\n        \"PROVIDER_ADDRESS\" : \"Jr calle 123\",\n        \"lat\": -11.50172,\n        \"lng\": -77.217241\n    },\n    \"order\": {\n        \"_id\": \"5f5e899287829d5990115c03\",\n        \"lat\": -11.49619190367379,\n        \"lng\": -77.20919351281671,\n        \"PAY\": 49289\n    },\n    \"client\": {\n        \"_id\": \"5f5e897787829d5990115c01\",\n        \"lat\": -11.49619190367379,\n        \"lng\": -77.20919351281671,\n        \"CLIENT_ADDRESS\": \"abc\",\n        \"CLIENT_NAME\": \"Tommy\",\n        \"CLIENT_PHONE\": \"+51999091429\"\n    },\n    \"products\": [\n        {\n            \"PRODUCT_ID\": \"61\",\n            \"PRODUCT_NAME\": \"Dudley\",\n            \"PRODUCT_QUANTITY\": 2,\n            \"PRODUCT_DESCRIPTION\": \"Consequatur error quas quae nam repellat voluptates magni. Maiores asperiores iure a similique. Nisi omnis et tenetur autem. Voluptatem vitae dolorum est velit ad eos id.\",\n            \"PRODUCT_OBSERVATION\": \"null- null\"\n        }\n    ]\n}"
+				},
+				"description": "Buscar negocio por id."
+			},
+			"response": []
+		}
+	]
+}

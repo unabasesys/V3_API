@@ -226,3 +226,30 @@ exports.getNegocioByMonth = [
             })
     }
 ];
+
+
+
+
+/**
+ * Get Negocio by month.
+ * 
+ * @returns {Object}
+ */
+exports.getNegocioItems = [
+    // auth,
+    function (req, res) {
+        console.log('getNegocioItems - ' + req.params);
+        var clientData = getUserData(req, res);
+        if (!clientData) res.status(500).send({
+            "msg": "No authorization token"
+        });
+
+        axios.get('http://' + clientData.ip + ':' + clientData.port + '/4DACTION/_api_get_items_negocios?id=' + req.params.negocio_id)
+            .then(response => {
+                res.status(200).send(response.data);
+            })
+            .catch(error => {
+                res.status(500).send(error)
+            })
+    }
+];
