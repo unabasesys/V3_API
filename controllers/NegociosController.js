@@ -231,7 +231,7 @@ exports.getNegocioByMonth = [
 
 
 /**
- * Get Negocio by month.
+ * Get Negocio items.
  * 
  * @returns {Object}
  */
@@ -253,3 +253,4 @@ exports.getNegocioItems = [
             })
     }
 ];
+
